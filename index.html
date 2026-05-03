@@ -1,0 +1,2288 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+  <title>Rizwan Hussain - Digital Marketing Expert
+  </title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Sites meta Data -->
+  <meta name="application-name" content="Torkfolio – Your Ultimate Personal Portfolio and Resume Template">
+  <meta name="author" content="thetork">
+  <meta name="keywords"
+    content="Torkfolio, personal portfolio, resume template, HTML portfolio template, portfolio for designers, SEO friendly portfolio">
+  <meta name="description"
+    content="Torkfolio is a professional and modern HTML template designed for personal portfolios, resumes, and creative professionals. Showcase your experiences, projects, and achievements with a sleek, SEO-optimized layout that ensures maximum visibility.">
+
+  <!-- OG meta data -->
+  <meta property="og:title" content="Torkfolio – Your Ultimate Personal Portfolio and Resume Template">
+  <meta property="og:site_name" content=Torkfolio>
+  <meta property="og:url" content="index-2.html">
+  <meta property="og:description"
+    content="Welcome to Torkfolio Showcase your talents with a sleek, modern HTML template designed for creative professionals. Create an impressive, SEO-friendly portfolio effortlessly!">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/og.png">
+
+
+
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/aos.css">
+  <link rel="stylesheet" href="assets/css/all.min.css">
+
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.134/examples/js/loaders/GLTFLoader.js"></script>
+
+
+  <!-- main css for template -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    html {
+      scroll-behavior: smooth !important;
+    }
+
+    .falling-heading span {
+      display: inline-block;
+      /* ✅ Required for GSAP transform */
+    }
+
+    .banner {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-step {
+      margin-bottom: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 60% !important;
+    }
+
+    .custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 214, 10, 0.088);
+      /* Very soft yellow */
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode: screen;
+      transform: translate(-50%, -50%) scale(1);
+      transition: transform 0.5s ease-out;
+      animation: pulse 4s infinite ease-in-out;
+      box-shadow: 0 0 100px 80px rgba(255, 214, 10, 0.05);
+      /* Large soft glow */
+      filter: blur(3px);
+      /* Makes edges softer */
+    }
+
+
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    .banner-img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      will-change: transform, opacity;
+    }
+
+
+    #main2{
+    width: 100%;
+    height: 100vh; 
+    background-color: rgba(0, 0, 0, 0.514);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; 
+    z-index: 2;
+    
+}
+
+
+ /* Background overlay */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(3px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    /* Popup box */
+    .popup-box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 400px;
+      max-width: 90%;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      animation: popup 0.3s ease-in-out;
+    }
+
+    @keyframes popup {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Close button */
+    .close-btn {
+      background: red;
+      color: white;
+      border: none;
+      float: right;
+      font-size: 18px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .trk-btn {
+      background: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <!-- ===============>> Preloader start here <<================= -->
+  <div class="preloader">
+    <div class="preloader__inner">
+      <div class="preloader__loading"></div>
+      <div class="preloader__thumb"><img src="assets/images/logo/preloader.png" alt="preloader"></div>
+    </div>
+  </div>
+  <!-- ===============>> Preloader end here <<================= -->
+
+
+
+
+
+  <!-- ===============>> light&dark switch start here <<================= -->
+  <!-- <div class="lightdark-switch">
+    <span class="switch-btn" id="btnSwitch"><img src="assets/images/icon/moon.svg" alt="light-dark-switchbtn"
+        class="swtich-icon"></span>
+  </div> -->
+  <!-- ===============>> light&dark switch start here <<================= -->
+
+
+
+
+
+  <!-- ===============>> Header section start here <<================= -->
+  <header class="header-section header-section--style2">
+    <div class="container">
+      <div class="header-wrapper">
+        <div class="logo">
+          <a href="index.html">
+           <h4>Rizwan Hussain</h4>
+          </a>
+        </div>
+        <div class="menu-area">
+          <ul class="menu menu--style1">
+            <li>
+              <a href="#">Home</a>
+              <!-- <ul class="submenu">
+                <li><a href="index.html">Home One</a></li>
+                <li><a href="index-3.html">Home Two</a></li>
+                <li><a href="index-4.html">Home Three</a></li>
+              </ul> -->
+            </li>
+            <li>
+              <a href="#about">About Me</a>
+            </li>
+            <li>
+              <a href="#services">Services</a>
+              <!-- <ul class="submenu">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="service-details.html">Services Details</a></li>
+              </ul> -->
+            </li>
+            <li>
+              <a href="#portfolio">Projects</a>
+            </li>
+
+            <!-- <li>
+              <a href="javascript:void(0);">Pages</a>
+              <ul class="submenu">
+                <li><a href="project.html">Project</a></li>
+                <li><a href="project-details.html">Project Details</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="blog-details.html">Blog Details</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="reset-pass.html">Reset Password</a></li>
+                <li><a href="404.html">404 Error</a></li>
+              </ul>
+            </li> -->
+            <li>
+              <a href="#contact">Contact Me</a>
+            </li>
+          </ul>
+
+        </div>
+        <div class="header-action">
+          <div class="menu-area">
+            <div class="header-btn">
+              <a href="#contact" class="trk-btn trk-btn--outline">
+                <span>Hire Me</span>
+              </a>
+            </div>
+
+            <!-- toggle icons -->
+            <div class="header-bar d-lg-none header-bar--style1">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ===============>> Header section end here <<================= -->
+
+
+
+
+  <!-- ===============>> Banner section start here <<================= -->
+  <section class="banner banner--style1 bg-grid" id="home">
+    <div class="container">
+      <div class="banner__wrapper">
+        <div class="row gy-5 gx-4">
+          <div class="col-lg-6">
+            <div class="banner__content">
+              <div class="banner__content-shape">
+                <img src="assets/images/icon/shape/loop-arrow.svg" alt="Loop arrow image">
+              </div>
+              <div class="banner__content-subtitle">
+                <p>Hey Hi! 👋</p>
+              </div>
+              <h1 class="banner__content-heading falling-heading">
+               <span style=" font-size:32px;"> <span>I</span><span>'</span><span>m</span>
+                <span>R</span><span>I</span><span>Z</span><span>W</span><span>A</span><span>N</span>
+                <span>H</span><span>U</span><span>S</span><span>S</span><span>A</span><span>I</span><span>N</span></span><br>
+
+
+                <span
+                  style="color: #C4EF17 !important; font-size:50px;"><span>D</span><span>I</span><span>G</span><span>I</span><span>T</span><span>A</span><span>L</span>
+                  <span>M</span><span>A</span><span>R</span><span>K</span><span>E</span><span>T</span><span>I</span><span>N</span><span>G</span></span>
+                <br>
+               <span style=" font-size:32px;"> <span>E</span><span>X</span><span>P</span><span>E</span><span>R</span><span>T</span> </span> <img src="assets/images/icon/shape/diamond-star.svg" alt="diamond-star shape">
+              </h1>
+
+
+              <p class="banner__content-moto">A blend of creativity, empathy, and technical expertise, I strive to
+                design interfaces that not only look users at every
+                interaction.
+              </p>
+              <div class="banner__btn-group btn-group">
+                <a class="trk-btn trk-btn--primary" id="openFormBtn"  onclick="">Let's Connect </a>
+
+                <a href="https://www.youtube.com/watch?v=k2maqlyUuVw" class="play-btn" data-fslightbox>
+                  <span class="play-icon"><i class="fa-solid fa-play"></i></span> Intro Video
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="banner__thumb" >
+              <img src="assets/images/banner/home4/banner.png" alt="banner-thumb" class="banner-img dark">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- <div class="popup-overlay" id="popupForm">
+    <div class="popup-box">
+      <button class="close-btn" id="closeFormBtn"> close  </button>
+      <div class="contact__form">
+        <form action="https://thetork.com/" data-aos="fade-left" data-aos-duration="1000">
+          <div class="row g-4">
+            <div class="col-12">
+              <div>
+                <label for="name" class="form-label">Name</label>
+                <input class="form-control" type="text" id="name" placeholder="Full Name">
+              </div>
+            </div>
+            <div class="col-12">
+              <div>
+                <label for="email" class="form-label">Email</label>
+                <input class="form-control" type="email" id="email" placeholder="Email here">
+              </div>
+            </div>
+            <div class="col-12">
+              <div>
+                <label for="textarea" class="form-label">Message</label>
+                <textarea cols="20" rows="2" class="form-control" id="textarea"
+                  placeholder="Enter Your Message"></textarea>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="trk-btn trk-btn--primary w-100">Contact Me</button>
+        </form>
+      </div>
+    </div>
+  </div> -->
+
+    <div class="banner__shape">
+      <span class="banner__shape-item banner__shape-item--1"><img src="assets/images/icon/shape/diamond-star.svg"
+          alt="shape icon"></span>
+      <span class="banner__shape-item banner__shape-item--2"><img src="assets/images/icon/shape/sixline-asterisk.svg"
+          alt="shape icon"></span>
+      <span class="banner__shape-item banner__shape-item--3"><img src="assets/images/icon/shape/diamond-star2.svg"
+          alt="shape icon"></span>
+    </div>
+
+    <div class="overlay overlay--bottom-left"></div>
+  </section>
+  <!-- ===============>> Banner section end here <<================= -->
+
+
+
+
+  <!-- ===============>> service category section start here <<================= -->
+  <section class="services-category">
+    <div class="container">
+      <div class="services-category__slider  swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="services-category__item">
+              <span class="services-category__item-icon">
+                <img src="assets/images/icon/shape/blue-asterisk.svg" alt="Asterisk Icon">
+              </span>
+              <h5>UX Design</h5>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="services-category__item">
+              <span class="services-category__item-icon">
+                <img src="assets/images/icon/shape/blue-asterisk.svg" alt="Asterisk Icon">
+              </span>
+              <h5>Wireframe</h5>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="services-category__item">
+              <span class="services-category__item-icon">
+                <img src="assets/images/icon/shape/blue-asterisk.svg" alt="Asterisk Icon">
+              </span>
+              <h5>Art Design</h5>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="services-category__item">
+              <span class="services-category__item-icon">
+                <img src="assets/images/icon/shape/blue-asterisk.svg" alt="Asterisk Icon">
+              </span>
+              <h5>Dashboard</h5>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="services-category__item">
+              <span class="services-category__item-icon">
+                <img src="assets/images/icon/shape/blue-asterisk.svg" alt="Asterisk Icon">
+              </span>
+              <h5>App Design</h5>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="services-category__item">
+              <span class="services-category__item-icon">
+                <img src="assets/images/icon/shape/blue-asterisk.svg" alt="Asterisk Icon">
+              </span>
+              <h5>Mobile App</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===============>> service category section end here <<================= -->
+
+
+
+
+  <!-- ===============>> About section start here <<================= -->
+  <section class="about about--style1 padding-top padding-bottom" id="about">
+    <div class="container">
+      <div class="about__wrapper">
+        <div class="row g-4  align-items-center">
+          <div class="col-lg-5">
+            <div class="about__thumb pe-lg-5" data-aos="fade-right" data-aos-duration="800">
+              <div class="about__thumb-inner">
+                <div class="about__thumb-image floating-content">
+                  <img class="dark" src="assets/images/banner/home4/banner.png" alt="about-image">
+                  <div class="floating-content__bottom-left" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="floating-content__item">
+                      <h3> <span class="purecounter" data-purecounter-start="1920"
+                          data-purecounter-end="700">700+</span>+
+                      </h3>
+                      <p>Clients all Over the World</p>
+                    </div>
+                  </div>
+                  <div class="floating-content__top-right" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="floating-content__item">
+                      <h3> <span class="purecounter" data-purecounter-start="40" data-purecounter-end="95">95</span>%
+                      </h3>
+                      <p>Satisfied Customers !</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="about__content gradient-border active" data-aos="fade-left" data-aos-duration="800">
+              <div class="section-header">
+                <div class="subtitle">
+                  <span><img src="assets/images/icon/sparkle.svg" alt="sparkle icon"></span> About Me
+                </div>
+                <h2>Digital Marketing Process</h2>
+                <p class="mb-0">I am a Digital Marketing professional, and I’m very passionate and dedicated to my work. With 7 years of experience in the 
+                  field, I specialize in creating impactful strategies that drive brand growth, boost online visibility, and deliver measurable results..</p>
+              </div>
+
+              <div class="contact-info d-flex flex-wrap gap-4">
+                <div class="contact-info__item position-relative">
+                  <div class="contact-info__item-thumb">
+                    <img src="assets/images/icon/email.svg" alt="email icon">
+                  </div>
+                  <div class="contact-info__item-content ">
+                    <p>Email</p>
+                    <h6><a href="mailto:mrrizwanhussain4@gmail.com" class="text-inherit stretched-link">mrrizwanhussain4@gmail.com</a>
+                    </h6>
+                  </div>
+                </div>
+                <!-- <div class="contact-info__item position-relative">
+                  <div class="contact-info__item-thumb">
+                    <img src="assets/images/icon/phone.svg" alt="phone icon">
+                  </div>
+                  <div class="contact-info__item-content">
+                    <p>Phone</p>
+                    <h6><a href="tel:+77022444055" class="text-inherit stretched-link">+77 022 444 05 05</a></h6>
+                  </div>
+                </div> -->
+              </div>
+              <div class="btn-group mt-65">
+                <a href="contact.html" class="trk-btn trk-btn--primary">Let's Work</a>
+                <!-- <a class="trk-btn trk-btn--outline" href="assets/images/about/cv.pdf" download>Download CV <span><i
+                      class="fa-solid fa-download"></i></span></a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="about__shape">
+      <span class="about__shape-item about__shape-item--1"><img src="assets/images/icon/shape/diamond-star2.svg"
+          alt="shape icon"></span>
+    </div>
+  </section>
+  <!-- ===============>> About section start here <<================= -->
+
+
+
+
+  <!-- ===============>> Services section start here <<================= -->
+  <section class="services2 padding-top padding-bottom bg-grid" id="services">
+    <div class="container">
+      <div class="section-header section-header--style2 text-center" data-aos="fade-up" data-aos-duration="1000">
+        <div class="subtitle">
+          <span><img src="assets/images/icon/shape/blue-asterisk.svg" alt="sparkle icon"></span> Our Services List
+        </div>
+        <h2>My <span>Specializations</span></h2>
+      </div>
+
+      <div class="services2__list">
+        <div class="service-step">
+          <div class="services2__item-inner gradient-border">
+            <div class="services2__item-wrapper">
+              <div class="services2__item-thumb">
+                <img src="assets/images/service/icon/web-icon.svg" alt="web icon">
+              </div>
+              <div class="services2__item-content">
+                <h4><a href="service-details.html">Website Development</a></h4>
+                <p>Custom-built websites with fast loading, mobile-friendly design, and SEO integration.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-step">
+          <div class="services2__item-inner gradient-border">
+            <div class="services2__item-wrapper">
+              <div class="services2__item-thumb">
+                <img src="assets/images/service/icon/mobile-icon.svg" alt="mobile icon">
+              </div>
+              <div class="services2__item-content">
+                <h4><a href="service-details.html">Store Customization</a></h4>
+                <p>E-commerce Solutions (Shopify, WooCommerce, Magento)</p>
+                <p>Service-Based Websites (Appointment booking systems, Service listings)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-step">
+          <div class="services2__item-inner gradient-border">
+            <div class="services2__item-wrapper">
+              <div class="services2__item-thumb">
+                <img src="assets/images/service/icon/backend-icon.svg" alt="backend icon">
+              </div>
+              <div class="services2__item-content">
+                <h4><a href="service-details.html">Social Media Optimization</a></h4>
+                <p>Bio optimization, highlight covers, page branding, and layout design.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="service-step">
+          <div class="services2__item-inner gradient-border">
+            <div class="services2__item-wrapper">
+              <div class="services2__item-thumb">
+                <img src="assets/images/service/icon/backend-icon.svg" alt="backend icon">
+              </div>
+              <div class="services2__item-content">
+                <h4><a href="service-details.html">Portfolio/Resume Websites</a></h4>
+                <p>Custom portfolio websites for professionals, freelancers, and creatives.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="service-step">
+          <div class="services2__item-inner gradient-border">
+            <div class="services2__item-wrapper">
+              <div class="services2__item-thumb">
+                <img src="assets/images/service/icon/backend-icon.svg" alt="backend icon">
+              </div>
+              <div class="services2__item-content">
+                <h4><a href="service-details.html">Landing Page Design</a></h4>
+                <p> High-converting landing pages for specific promotions, offers, or lead magnets.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="service-step">
+          <div class="services2__item-inner gradient-border">
+            <div class="services2__item-wrapper">
+              <div class="services2__item-thumb">
+                <img src="assets/images/service/icon/backend-icon.svg" alt="backend icon">
+              </div>
+              <div class="services2__item-content">
+                <h4><a href="service-details.html">Video Editing</a></h4>
+                <p>Short-form video creation, social media reels, promos, YouTube intros, motion graphics, and branding edits.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class=" swiper-nav swiper-nav--style1">
+        <button class="swiper-nav__btn swiper-nav__btn--style2 services2__slider-prev"><i
+            class="fa-solid fa-arrow-left-long"></i></button>
+        <button class="swiper-nav__btn services2__slider-next active"><i
+            class="fa-solid fa-arrow-right-long"></i></button>
+      </div> -->
+
+    </div>
+
+    <div class="overlay overlay--top-center"></div>
+  </section>
+  <!-- ===============>> Services section end here <<================= -->
+
+
+  <!-- ===============>> portfolio section start here <<================= -->
+  <div class="portfolio padding-top padding-bottom" id="portfolio">
+    <div class="container">
+      <div class="portfolio__header gap-4" data-aos="fade-up" data-aos-duration="1000">
+        <div class="section-header">
+          <div class="subtitle">
+            <span class="me-1"><img src="assets/images/icon/rectangle.svg" alt="rectangle icon"></span>Services
+          </div>
+          <h2>Explore Our Expertise</h2>
+        </div>
+        <div class="portfolio__header-action">
+          <ul class="nav nav-pills mb-3 gap-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-marketing-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-marketing" type="button" role="tab" aria-controls="pills-marketing"
+                aria-selected="true">Marketing</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-seo-tab" data-bs-toggle="pill" data-bs-target="#pills-seo"
+                type="button" role="tab" aria-controls="pills-seo" aria-selected="false">SEO</button>
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-digital-tab" data-bs-toggle="pill" data-bs-target="#pills-digital"
+                type="button" role="tab" aria-controls="pills-digital" aria-selected="false">Digital</button>
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-writing-tab" data-bs-toggle="pill" data-bs-target="#pills-writing"
+                type="button" role="tab" aria-controls="pills-writing" aria-selected="false">Content Writing</button>
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-agency-tab" data-bs-toggle="pill" data-bs-target="#pills-agency"
+                type="button" role="tab" aria-controls="pills-agency" aria-selected="false">Agency</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="portfolio__wrapper" data-aos="fade-up" data-aos-duration="1000">
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-marketing" role="tabpanel"
+            aria-labelledby="pills-marketing-tab" tabindex="0">
+            <div class="row g-4 justify-content-center">
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/WhatsApp Image 2025-09-07 at 22.51.32_fc527948.jpg" alt="Portfolio Images" class="img-fluid">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Brand Strategy & Identity</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Brand Strategy & Identity</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/WhatsApp Image 2025-09-07 at 23.43.03_d673fe45.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Social Media Campaign Management</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Market Research & Competitor Analysis</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/WhatsApp Image 2025-09-07 at 23.25.27_a104bcfc.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Performance Tracking & Analytics</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Social Media Campaign Management</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-5 g-4 justify-content-center">
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/WhatsApp Image 2025-09-07 at 23.33.27_2bb5d261.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Brand Strategy & Identity</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Email Campaigns & Automation</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                       <img src="assets/images/portfolio/WhatsApp Image 2025-09-07 at 23.34.27_d39287a4.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Social Media Campaign Management</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Performance Tracking & Analytics</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/WhatsApp Image 2025-09-07 at 23.36.34_b07dad2b.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Performance Tracking & Analytics</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Trend-Based Content Planning</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-seo" role="tabpanel" aria-labelledby="pills-seo-tab" tabindex="0">
+            <div class="row g-4 justify-content-center">
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/Technical-SEO-–-All-you-need-to-know_edit.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Content Writing</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Technical SEO</a></h4>
+                      <p> (site speed, mobile optimization, crawlability)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/on page.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Date Analysis</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">On-Page SEO</a></h4>
+                      <p> (keyword optimization, meta tags, internal linking)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/Off-Page-SEO-Techniques-768x420.webp" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Social Media</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Off-Page SEO</a></h4>
+                      <p> (backlink building, outreach, guest posts)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <div class="row mt-5 g-4 justify-content-center">
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/OIP.webp" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Content Writing</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Local SEO</a></h4>
+                      <!-- <p>(Google My Business, local map ranking)</p> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/SEO Content Strategy & Planning.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Date Analysis</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">SEO Content Strategy & Planning</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/full website.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Social Media</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Full Website SEO Audit & Monthly Reports</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-digital" role="tabpanel" aria-labelledby="pills-digital-tab"
+            tabindex="0">
+            <div class="row g-4 justify-content-center">
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/website.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Date Analysis</span>
+                      </div> -->
+                      <h4> <a href="project-details.html"> Website Development </a></h4>
+                      <p>(Responsive, SEO-friendly, fast-loading)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/store custom.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Content Writing</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Store Customization </a></h4>
+                      <p>(eCommerce platforms like Shopify, WooCommerce, service-based sites)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/social gaps.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Marketing</span>
+                      </div> -->
+                      <h4> <a href="project-details.html"> Social Media Management </a></h4>
+                      <p>(Scheduling, posts, engagement)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-5 g-4 justify-content-center">
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/email.webp" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Date Analysis</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Email Marketing & Automation </a></h4>
+                      <p>(Newsletters, drip campaigns)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/google ads.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Content Writing</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Google & Meta Ads </a></h4>
+                      <p>(Paid ads for performance and growth)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/video editing.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Marketing</span>
+                      </div> -->
+                      <h4> <a href="project-details.html"> Video Editing </a></h4>
+                      <p>(Reels, Promo videos, Motion graphics, Branding clips)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-writing" role="tabpanel" aria-labelledby="pills-writing-tab"
+            tabindex="0">
+            <div class="row g-4 justify-content-center">
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/web copy.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Date Analysis</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Website Copywriting </a></h4>
+                      <p>(Home, About, Services, Landing Pages)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/bloging.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Content Writing</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Blog Articles </a></h4>
+                      <p>(SEO-optimized, long-form & short-form content)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/product.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Marketing</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Product Descriptions </a></h4>
+                      <p>(eCommerce-focused, persuasive writing)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-5 g-4 justify-content-center">
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/news.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Date Analysis</span>
+                      </div> -->
+                      <h4> <a href="project-details.html"> Email & Newsletter Copy </a></h4>
+                      <p>(Effective copy for open rates and conversions)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/voice.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Content Writing</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Brand Story & Voice Development </a></h4>
+                      <p>(Consistent messaging across platforms)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/caption hooks.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Marketing</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Social Media Captions & Hooks</a></h4>
+                      <p> (Engaging posts tailored to your audience)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-agency" role="tabpanel" aria-labelledby="pills-agency-tab" tabindex="0">
+            <div class="row g-4 justify-content-center">
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/social media.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Marketing</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Social Media Marketing</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/Complete Project.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Date Analysis</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Complete Project Management</a></h4>
+                      <!-- <p> (From strategy to execution)</p> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/Team Collaboration.webp" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Content Writing</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Team Collaboration </a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-5 g-4 justify-content-center">
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/Dedicated Client Portal.webp" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Marketing</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Dedicated Client Portal & Communication </a></h4>
+                      <p>(Easy tracking and updates)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/Retainer Packages.webp" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Date Analysis</span>
+                      </div> -->
+                      <h4> <a href="project-details.html"> Retainer Packages </a></h4>
+                      <p>(Flexible plans to grow with your business)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="portfolio__item">
+                  <div class="portfolio__item-inner">
+                    <div class="portfolio__item-thumb">
+                      <img src="assets/images/portfolio/Monthly Reporting.jpg" alt="Portfolio Images">
+                    </div>
+                    <div class="portfolio__item-content">
+                      <!-- <div class="portfolio__meta">
+                        <span class="portfolio__meta-tag">Content Writing</span>
+                      </div> -->
+                      <h4> <a href="project-details.html">Monthly Reporting & Strategy Sessions </a></h4>
+                      <p>(Detailed tracking and recommendations)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="overlay overlay--top-left"></div>
+  </div>
+  <!-- ===============>> portfolio section end here <<================= -->
+
+
+
+  <!-- ===============>> Case Studies section start here <<================= -->
+  <section class="case-studies padding-top padding-bottom">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="case-studies__content" data-aos="fade-left" data-aos-duration="800">
+            <div class="section-header">
+              <div class="subtitle">
+                <span><img src="assets/images/icon/sparkle.svg" alt="sparkle icon"></span> Explore
+              </div>
+              <h2>Explore our Latest<span> Recent Projects</span></h2>
+              <p>
+               Discover how we craft seamless digital solutions — from modern banking apps to powerful dashboard branding that elevate businesses.
+              </p>
+            </div>
+
+            <div class="swiper-btn-group swiper-nav swiper-nav--style1 mt-0">
+              <button class="swiper-nav__btn case-studies__slider-prev"><i
+                  class="fa-solid fa-arrow-left-long"></i></button>
+              <button class="swiper-nav__btn case-studies__slider-next active"><i
+                  class="fa-solid fa-arrow-right-long"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="case-studies__slider swiper" data-aos="fade-up" data-aos-duration="1000">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-05 at 01.41.41_2a8118dc.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://smartpoolscvinc.com/" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag blog__meta-tag--style1">Smart Pools</span>
+                      </div>
+                      <h4> <a href="project-details.html">Maintenance Services</a> </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb active">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-05 at 01.41.49_de247136.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://barrettstoursllc.com/" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag case-studies__meta-tag--style1">Barrett's Tours</span>
+                      </div>
+                      <h4> <a href="project-details.html">Wedding Transportation</a> </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-05 at 01.42.19_8d6f4c05.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://edinacraftsmen.com/" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag blog__meta-tag--style1">Online Estimate</span>
+                      </div>
+                      <h4> <a href="project-details.html">Roofing Services</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-05 at 01.47.58_50f4b17f.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://www.djduni.com/" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag blog__meta-tag--style1">Responsive UI Design</span>
+                      </div>
+                      <h4> <a href="project-details.html">Entertainment Services</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-05 at 01.48.29_18cdde41.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://cashforjunkcarsky.com/" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag blog__meta-tag--style1">Cash for Junk Cars</span>
+                      </div>
+                      <h4> <a href="project-details.html">Junk Car Services</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-05 at 02.09.11_6cd55f72.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://sobharealty.com/" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag blog__meta-tag--style1">Luxury Dubai Real Estate</span>
+                      </div>
+                      <h4> <a href="project-details.html">Estate Company</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-05 at 02.09.44_3e98753c.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://en-pk.svestonwatches.com/" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag blog__meta-tag--style1">Sveston Official Site</span>
+                      </div>
+                      <h4> <a href="project-details.html">International Site</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-05 at 02.13.01_6e5fc562.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://perfecthomesuae.com/" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag blog__meta-tag--style1">Dream Home Today</span>
+                      </div>
+                      <h4> <a href="project-details.html">Investment Opportunities</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-07 at 23.50.09_3a668155.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://tribecaairconditioning.com/installation-mini-split-heat-pump-service-in-bronx-ny/" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag blog__meta-tag--style1">Mini Split Heat</span>
+                      </div>
+                      <h4> <a href="project-details.html">Pump Installation Service</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-08 at 00.00.39_87bb854e.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://johnthemortgageguyfl.com/" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag blog__meta-tag--style1">Realizing Dreams</span>
+                      </div>
+                      <h4> <a href="project-details.html">Unlocking Doors</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-08 at 00.18.24_17cab410.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://spinbrothasdjs.com/" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag blog__meta-tag--style1">Spin Brothas Djs</span>
+                      </div>
+                      <h4> <a href="project-details.html">Elevate Your Event</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-08 at 00.22.36_1bb12b45.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://guttervacuumllc.com/" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag blog__meta-tag--style1">Keep Your Gutters</span>
+                      </div>
+                      <h4> <a href="project-details.html">Gutters VacUum LLC</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-08 at 00.26.32_e04358b0.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://palmbeachadvantagelimo.com/" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag blog__meta-tag--style1">PALM BEACH</span>
+                      </div>
+                      <h4> <a href="project-details.html">ADVANTAGE LIMO</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-08 at 00.31.10_1f46f957.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://joraonline.co.uk/" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag blog__meta-tag--style1">PERMIUM BRANDS</span>
+                      </div>
+                      <h4> <a href="project-details.html">JORA JUNCTION</a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="case-studies__item">
+                  <div class="case-studies__item-inner">
+                    <div class="case-studies__item-thumb">
+                      <img src="assets/images/project/WhatsApp Image 2025-09-08 at 00.40.03_b79fc9ea.jpg" alt="Case Studies Images">
+                      <div class="case-studies__buttons">
+                        <a href="https://www.walmart.com" class="trk-btn trk-btn--primary mt-3">View Project</a>
+                      </div>
+                    </div>
+                    <div class="case-studies__item-content">
+                      <div class="case-studies__meta">
+                        <span class="case-studies__meta-tag blog__meta-tag--style1">Pakistani Sale</span>
+                      </div>
+                      <h4> <a href="project-details.html">WALMART </a></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="overlay overlay--bottom-left"></div>
+  </section>
+
+
+  <!-- ===============>> Case Studies section start here <<================= -->
+
+
+
+  <!-- ===============>> experience section start here <<================= -->
+  <section class="experience experience--style2 padding-bottom padding-top position-relative bg-grid">
+    <div class="container">
+      <div class="experience__header pb-45 d-md-flex align-items-center justify-content-between" data-aos="fade-up"
+        data-aos-duration="1000">
+        <div class="section-header pb-0">
+          <div class="subtitle">
+            <span><img src="assets/images/icon/sparkle.svg" alt="sparkle icon"></span> Skill
+          </div>
+          <h2>My <span>Experience</span></h2>
+        </div>
+        <!-- <div class="experience__header-btn">
+          <a href="#contact" class="trk-btn trk-btn--primary">Contact Me</a>
+        </div> -->
+      </div>
+      <div class="experience__wrapper" data-aos="fade-up" data-aos-duration="1000">
+        <div class="row g-5">
+          <div class="col-12">
+            <div class="experience__item">
+              <div class="experience__item-period">
+                <p>2025 to Present</p>
+                <h6>TRK TTT Studios</h6>
+
+                <div class="experience__item-shape">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="34" viewBox="0 0 33 34" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M16.5 34C16.467 24.6227 9.09241 17.0315 0 17.0315C9.11269 17.0315 16.5 9.40615 16.5 0C16.5329 9.37729 23.9076 16.9685 33 16.9685C23.8872 16.9685 16.5 24.5939 16.5 34Z"
+                      fill="currentColor" />
+                  </svg>
+                </div>
+              </div>
+              <div class="experience__item-inner gradient-border">
+                <div class="experience__item-wrapper position-relative">
+                  <div class="experience__item-content">
+                    <div class="experience__item-title">
+                      <h4>Senior Designer</h4>
+                    </div>
+                    <div class="experience__item-description">
+                      <p>As a senior UI/UX designer, I bring over 09 years of experience in crafting experiences.</p>
+                    </div>
+                  </div>
+                  <a href="service-details.html" class="experience__item-action stretched-link">
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="experience__item active">
+              <div class="experience__item-period ">
+                <p>Dec 2018 to 2021</p>
+                <h6>Whitecap Canada</h6>
+                <div class="experience__item-shape">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="34" viewBox="0 0 33 34" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M16.5 34C16.467 24.6227 9.09241 17.0315 0 17.0315C9.11269 17.0315 16.5 9.40615 16.5 0C16.5329 9.37729 23.9076 16.9685 33 16.9685C23.8872 16.9685 16.5 24.5939 16.5 34Z"
+                      fill="currentColor" />
+                  </svg>
+                </div>
+              </div>
+              <div class="experience__item-inner gradient-border active">
+                <div class="experience__item-wrapper position-relative">
+                  <div class="experience__item-content">
+                    <div class="experience__item-title">
+                      <h4>UI/UX Designer</h4>
+                    </div>
+                    <div class="experience__item-description">
+                      <p>I am Ui/Ux dedicated to creating seamless digital at user satisfaction.</p>
+                    </div>
+                  </div>
+                  <a href="service-details.html" class="experience__item-action stretched-link"><i
+                      class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="experience__item">
+              <div class="experience__item-period ">
+                <p>August 2015 to 2018</p>
+                <h6>Packetilabs Ltd</h6>
+                <div class="experience__item-shape">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="34" viewBox="0 0 33 34" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M16.5 34C16.467 24.6227 9.09241 17.0315 0 17.0315C9.11269 17.0315 16.5 9.40615 16.5 0C16.5329 9.37729 23.9076 16.9685 33 16.9685C23.8872 16.9685 16.5 24.5939 16.5 34Z"
+                      fill="currentColor" />
+                  </svg>
+                </div>
+              </div>
+              <div class="experience__item-inner gradient-border">
+                <div class="experience__item-wrapper position-relative">
+                  <div class="experience__item-content">
+                    <div class="experience__item-title">
+                      <h4>Web Designer</h4>
+                    </div>
+                    <div class="experience__item-description">
+                      <p>I specialize in translating ideas into visually stunning and functional websites.</p>
+                    </div>
+                  </div>
+                  <a href="service-details.html" class="experience__item-action stretched-link"><i
+                      class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="experience__item">
+              <div class="experience__item-period ">
+                <p>July 2013 to 2015 </p>
+                <h6>Sagebrush</h6>
+
+                <div class="experience__item-shape">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="34" viewBox="0 0 33 34" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M16.5 34C16.467 24.6227 9.09241 17.0315 0 17.0315C9.11269 17.0315 16.5 9.40615 16.5 0C16.5329 9.37729 23.9076 16.9685 33 16.9685C23.8872 16.9685 16.5 24.5939 16.5 34Z"
+                      fill="currentColor" />
+                  </svg>
+                </div>
+              </div>
+              <div class="experience__item-inner gradient-border">
+                <div class="experience__item-wrapper position-relative">
+                  <div class="experience__item-content">
+                    <div class="experience__item-title">
+                      <h4>Junior Designer</h4>
+                    </div>
+                    <div class="experience__item-description">
+                      <p>I am enthusiastic about learning and honing my skills in the dynamic field of design.</p>
+                    </div>
+                  </div>
+                  <a href="service-details.html" class="experience__item-action stretched-link"><i
+                      class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===============>> experience section end here <<================= -->
+
+
+
+
+  <!-- ===============>> Pricing section start here <<================= -->
+  <!-- <section class="pricing padding-top padding-bottom bg-grid">
+    <div class="section-header text-center mb-lg-3" data-aos="fade-up" data-aos-duration="1000">
+      <div class="subtitle">
+        <span><img src="assets/images/icon/sparkle.svg" alt="sparkle icon"></span> Best Pricing
+      </div>
+      <h2>My Pricing <span>Plan</span></h2>
+    </div>
+    <div class="container">
+      <div class="pricing__wrapper">
+        <div class="row g-4 align-items-center justify-content-center">
+          <div class="col-md-6 col-lg-4">
+            <div class="pricing__item " data-aos="fade-right" data-aos-duration="1000">
+              <div class="pricing__item-inner gradient-border">
+                <div class="pricing__item-content">
+
+                
+                  <div class="pricing__item-top">
+                    <h6 class="mb-15">Hourly Basis</h6>
+                    <h3 class="mb-25">$20<span>/Hourly</span> </h3>
+
+                    <div class="pricing__item-btn">
+                      <a href="signup.html" class="trk-btn trk-btn--outline text-center w-100">Get Started</a>
+                    </div>
+                  </div>
+
+                  <div class="pricing__list">
+                    <ul>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        UI UX Design</li>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        Design Customization</li>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        Design with Figma</li>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        Multipage Design</li>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        Support 6 months</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="pricing__item " data-aos="fade-right" data-aos-duration="1000">
+              <div class="pricing__item-inner gradient-border active">
+                <div class="pricing__item-wrapper">
+
+                </div>
+                <div class="pricing__item-content">
+
+                
+                  <div class="pricing__item-top">
+                    <h6 class="mb-15">Full Time</h6>
+                    <h3 class="mb-25">$3,000<span>/Monthly</span> </h3>
+
+                    <div class="pricing__item-btn">
+                      <a href="signup.html" class="trk-btn trk-btn--outline active text-center w-100">Get Started</a>
+                    </div>
+
+                    <div class="pricing__item-badge">
+                      <span>Best Value</span>
+                    </div>
+                  </div>
+
+                  <div class="pricing__list">
+                    <ul>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        UI UX Design</li>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        Design Customization</li>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        Design with Figma</li>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        Multipage Design</li>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        Support 6 months</li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="pricing__item " data-aos="fade-right" data-aos-duration="1000">
+              <div class="pricing__item-inner gradient-border">
+                <div class="pricing__item-content">
+
+                
+                  <div class="pricing__item-top">
+                    <h6 class="mb-15">Part Time</h6>
+                    <h3 class="mb-25">$1,000<span>/Monthly (Minimum)</span> </h3>
+
+                    <div class="pricing__item-btn">
+                      <a href="signup.html" class="trk-btn trk-btn--outline text-center w-100">Get Started</a>
+                    </div>
+                  </div>
+
+                  <div class="pricing__list">
+                    <ul>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        UI UX Design</li>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        Design Customization</li>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        Design with Figma</li>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        Multipage Design</li>
+                      <li class="pricing__list-item"><span><img src="assets/images/icon/border-arrow.svg"
+                            alt="border arrow"></span>
+                        Support 6 months</li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="overlay overlay--top-center"></div>
+    <div class="overlay overlay--bottom-right"></div>
+  </section> -->
+  <!-- ===============>> Pricing section start here <<================= -->
+
+
+
+  <!-- ===============>> Testimonial section start here <<================= -->
+  <section class="testimonial padding-top padding-bottom">
+    <div class="container">
+      <div class="row g-4 justify-content-between">
+        <div class="col-lg-4">
+          <div class="testimonial__content" data-aos="fade-right" data-aos-duration="1000">
+            <div class="section-header">
+              <div class="subtitle">
+                <span><img src="assets/images/icon/sparkle.svg" alt="sparkle icon"></span> Testimonial
+              </div>
+              <h2>What <span>Clients</span> Say</h2>
+              <p>
+                Their professionalism and communication the project were exceptional, and we look forward to with them
+                again in the future.
+              </p>
+            </div>
+
+            <div class="swiper-btn-group swiper-nav swiper-nav--style1 mt-0">
+              <button class="swiper-nav__btn testimonial__slider-prev"><i
+                  class="fa-solid fa-arrow-left-long"></i></button>
+              <button class="swiper-nav__btn testimonial__slider-next active"><i
+                  class="fa-solid fa-arrow-right-long"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="testimonial__slider swiper" data-aos="fade-up" data-aos-duration="1000">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial__item testimonial__item--style2">
+                  <div class="testimonial__item-inner gradient-border">
+                    <div class="testimonial__author">
+                      <div class="testimonial__author-info">
+                        <div class="testimonial__author-thumb">
+                          <img src="assets/images/testimonial/1.png" alt="author">
+                        </div>
+                        <div class="testimonial__author-designation">
+                          <h6>Selena Brook</h6>
+                          <span>StudioAC Customer</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="testimonial__item-content">
+                      <div class="testimonial__rating">
+                        <ul class="five-star">
+                          <li><i class="fa-solid fa-star"></i></li>
+                          <li><i class="fa-solid fa-star"></i></li>
+                          <li><i class="fa-solid fa-star"></i></li>
+                          <li><i class="fa-solid fa-star"></i></li>
+                          <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <div class="testimonial__quote">
+                          <span><i class="fa-solid fa-quote-right"></i></span>
+                        </div>
+                      </div>
+                      <p class="mb-0">
+                        Discover why clients love our UI/UX designs. Read their testimonials to learn how we elevate
+                        digital experit creativity, innovation, and user-centric solutions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial__item testimonial__item--style2">
+                  <div class="testimonial__item-inner gradient-border">
+                    <div class="testimonial__author">
+                      <div class="testimonial__author-info">
+                        <div class="testimonial__author-thumb">
+                          <img src="assets/images/testimonial/2.png" alt="author">
+                        </div>
+                        <div class="testimonial__author-designation">
+                          <h6>Esther Howard</h6>
+                          <span>Envato Customer</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="testimonial__item-content">
+                      <div class="testimonial__rating">
+                        <ul class="five-star">
+                          <li><i class="fa-solid fa-star"></i></li>
+                          <li><i class="fa-solid fa-star"></i></li>
+                          <li><i class="fa-solid fa-star"></i></li>
+                          <li><i class="fa-solid fa-star"></i></li>
+                          <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <div class="testimonial__quote">
+                          <span><i class="fa-solid fa-quote-right"></i></span>
+                        </div>
+                      </div>
+                      <p class="mb-0">
+                        Discover why clients love our UI/UX designs. Read their testimonials to learn how we elevate
+                        digital experit creativity, innovation, and user-centric solutions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="overlay overlay--bottom-left"></div>
+  </section>
+  <!-- ===============>> Testimonial section start here <<================= -->
+
+
+
+
+
+  <!-- ===============>> Contact section start here <<================= -->
+  <div class="contact padding-top padding-bottom bg-color" id="contact">
+    <div class="container">
+      <div class="contact__wrapper">
+        <div class="row g-5">
+          <div class="col-md-6">
+            <div class="section-header section-header--style2">
+              <div class="subtitle">
+                Contact Me
+              </div>
+              <h2 class="mb-25">Let's <span>Get in Touch</span></h2>
+              <p>Whether you have an idea you'd like to bring to life or need assistance with an existing project,</p>
+            </div>
+            <div class="contact__counter" data-aos="fade-right" data-aos-duration="1000">
+              <div class="row g-4">
+                <div class="col-lg-4">
+                  <div class="contact__about-item">
+                    <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="6">6</span>k+</h3>
+                    <span>Projects Completed</span>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="contact__about-item">
+                    <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="1">1</span>k+</h3>
+                    <span>Client Successful</span>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="contact__about-item">
+                    <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="7">7</span>+</h3>
+                    <span>Years of Experience</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="contact__social">
+              <ul class="social">
+                <li class="social__item">
+                  <a href="https://www.facebook.com/bemillionairewithriz" class="social__link active"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="social__item">
+                  <a href="https://www.instagram.com/bemillionairewithriz/" class="social__link  "><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="social__item">
+                  <a href="whatsapp.com/channel/0029Vb6HH5sD38CQHjLhDx25" class="social__link social__link--style4"><i class="fa-brands fa-whatsapp"></i></a>
+                </li>
+                <li class="social__item">
+                  <a href="https://www.youtube.com/@BeMillionairewithRiz" class="social__link social__link--style4"><i class="fab fa-youtube"></i></a>
+                </li>
+                <li class="social__item">
+                  <a href="https://www.tiktok.com/@bemillionairewithriz?_r=1&_t=ZS-962uRKdberM" class="social__link social__link--style4"><i class="fab fa-tiktok"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="contact__form">
+              <form action="https://thetork.com/" data-aos="fade-left" data-aos-duration="1000">
+                <div class="row g-4">
+                  <div class="col-12">
+                    <div>
+                      <label for="name" class="form-label">Name</label>
+                      <input class="form-control" type="text" id="name" placeholder="Full Name">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div>
+                      <label for="email" class="form-label">Email</label>
+                      <input class="form-control" type="email" id="email" placeholder="Email here">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div>
+                      <label for="textarea" class="form-label">Message</label>
+                      <textarea cols="20" rows="2" class="form-control" id="textarea"
+                        placeholder="Enter Your Message"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="trk-btn trk-btn--primary w-100">Contact Me</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact__shape">
+      <span class="contact__shape-item contact__shape-item--1"><img src="assets/images/icon/shape/sixline-asterisk.svg"
+          alt="asterisk icon"></span>
+    </div>
+
+    <div class="overlay overlay--bottom-left"></div>
+    <div class="overlay overlay--right-center"></div>
+
+  </div>
+  <!-- ===============>> Contact section start here <<================= -->
+
+
+
+
+
+  <!-- ===============>> footer start here <<================= -->
+  <footer class="footer">
+    <div class="footer__top footer__top--style1 bg-color">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="row gy-5 gx-4">
+            <div class="col-lg-4  col-sm-8">
+              <div class="footer__about">
+                     <h3>Rizwan Hussain</h3>
+                     <br>
+                <p class="footer__about-moto ">I  work with a passion of taking challenges creating new ones in UI/UX
+                  Sector.</p>
+                <div class="footer__app">
+                  <div class="footer__contact">
+                    <ul class="social">
+                      <li class="social__item">
+                        <a href="https://www.facebook.com/bemillionairewithriz" class="social__link active"><i class="fab fa-facebook-f"></i></a>
+                      </li>
+                      <li class="social__item">
+                        <a href="https://www.instagram.com/bemillionairewithriz/" class="social__link  "><i class="fab fa-instagram"></i></a>
+                      </li>
+                      <li class="social__item">
+                        <a href="whatsapp.com/channel/0029Vb6HH5sD38CQHjLhDx25" class="social__link social__link--style4"><i class="fa-brands fa-whatsapp"></i></a>
+                      </li>
+                      <li class="social__item">
+                        <a href="https://www.youtube.com/@BeMillionairewithRiz" class="social__link social__link--style4"><i class="fab fa-youtube"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2  col-sm-4 col-6">
+              <div class="footer__links">
+                <div class="footer__links-tittle">
+                  <h5>Service</h5>
+                </div>
+                <div class="footer__links-content">
+                  <ul class="footer__linklist">
+                    <li class="footer__linklist-item"> <a href="#services">Ui/Ux Design</a>
+                    </li>
+                    <li class="footer__linklist-item"> <a href="#services">App Design</a>
+                    </li>
+                    <li class="footer__linklist-item"> <a href="#services">Web Design</a> </li>
+                    <li class="footer__linklist-item"> <a href="#services">Ui/Ux Design</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2  col-sm-4 col-6">
+              <div class="footer__links">
+                <div class="footer__links-tittle">
+                  <h5>Quick Link</h5>
+                </div>
+                <div class="footer__links-content">
+                  <ul class="footer__linklist">
+                    <li class="footer__linklist-item"> <a href="#home">Home</a>
+                    </li>
+                    <li class="footer__linklist-item"> <a href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="footer__linklist-item"> <a href="#about">About</a></li>
+                    <li class="footer__linklist-item"> <a href="#services">Service</a> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4  col-sm-8">
+              <div class="footer__links">
+                <div class="footer__links-tittle">
+                  <h5>Subscribe newsletter</h5>
+                </div>
+                <div class="footer__links-content">
+                  <p>I  work with a passion of taking challenges and creating new ones.</p>
+                </div>
+                <div class="footer__subscription">
+                  <form class="subscription-form">
+                    <input type="email" class="form-control" placeholder="Email Address" required>
+                    <button type="submit" class="trk-btn trk-btn--primary">Subscribe</button>
+                  </form>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="overlay overlay--top-left"></div>
+      <div class="overlay overlay-blue--bottom-right"></div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__end">
+          <div class="footer__end-copyright">
+            <p class=" mb-0">Copyright © 2025 designed by <a href="https://themeforest.net/user/thetork/portfolio"
+                target="_blank">Rizwan Hussain</a> </p>
+          </div>
+          <div>
+            <!-- <ul class="footer__terms">
+              <li>
+                <a href="#">Terms & Conditions</a>
+              </li>
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="contact.html">Contact</a>
+              </li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__shape">
+      <span class="footer__shape-item footer__shape-item--1"><img src="assets/images/footer/1.png"
+          alt="shape icon"></span>
+    </div>
+  </footer>
+  <!-- ===============>> footer end here <<================= -->
+
+
+  <div class="custom-cursor"></div>
+
+  <script>
+    document.addEventListener("mousemove", function (e) {
+      const cursor = document.querySelector(".custom-cursor");
+      cursor.style.top = e.clientY + "px";
+      cursor.style.left = e.clientX + "px";
+    });
+
+  </script>
+
+
+
+
+  <!-- ===============>> scrollToTop start here <<================= -->
+  <a href="#" class="scrollToTop scrollToTop--style1"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+  <!-- ===============>> scrollToTop ending here <<================= -->
+
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+
+
+
+      <script>
+
+            const openBtn = document.getElementById('openFormBtn');
+            const closeBtn = document.getElementById('closeFormBtn');
+            const popup = document.getElementById('popupForm');
+
+            openBtn.addEventListener('click', () => {
+              popup.style.display = 'flex';
+            });
+
+            closeBtn.addEventListener('click', () => {
+              popup.style.display = 'none';
+            });
+
+            // Close popup if user clicks outside the form box
+            window.addEventListener('click', (e) => {
+              if (e.target === popup) {
+                popup.style.display = 'none';
+              }
+            });
+      </script>
+      
+
+
+
+        <script>
+          window.addEventListener("load", function () {
+            // Timeline for smooth entry + zoom effect
+            const tl = gsap.timeline({ delay: 0.3 });
+
+            tl.fromTo(".banner-img", 
+              {
+                x: 1000,           // Start from right
+                opacity: 0,       // Invisible at first
+                scale: 0.78      // Slightly smaller
+              }, 
+              {
+                x: 0,
+                opacity: 1,
+                scale: 1.2,       // Zoom in bigger
+                duration: 1.9,
+                ease: "power3.out"
+              }
+            )
+            .to(".banner-img", {
+              scale: 1.1,        // Settle to smooth size
+              duration: 0.6,
+              ease: "power2.inOut"
+            });
+          });
+        </script>
+
+          <script>
+            gsap.registerPlugin(ScrollTrigger);
+
+            const steps = document.querySelectorAll(".service-step");
+
+            steps.forEach((step, index) => {
+              gsap.from(step, {
+                scrollTrigger: {
+                  trigger: step,
+                  start: "top center",
+                  end: "bottom center",
+                  toggleActions: "play none none reverse",
+                  scrub: 1,
+                },
+                opacity: 0,
+                x: index % 2 === 0 ? -150 : 150,
+                duration: 1,
+                ease: "power2.out"
+              });
+            });
+          </script>
+          <!-- vendor plugins -->
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/all.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/aos.js"></script>
+  <script src="assets/js/fslightbox.js"></script>
+  <script src="assets/js/purecounter_vanilla.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        const letters = document.querySelectorAll(".falling-heading span");
+
+        // Set letters above and invisible
+        gsap.set(letters, { y: -120, opacity: 0 });
+
+        // Animate letters: falling down + bounce
+        gsap.to(letters, {
+          y: 0,
+          opacity: 1,
+          stagger: 0.06,
+          ease: "bounce.out",
+          duration: 1.2
+        });
+
+        // Animate image at same time as letters
+        // gsap.from(".banner__thumb img", {
+        //   scale: 0.5,
+        //   opacity: 0,
+        //   duration: 2,
+        //   ease: "power3.out"
+        // });
+
+        // Animate paragraph a bit later
+        gsap.from(".banner__content-moto", {
+          opacity: 0,
+          y: 40,
+          delay: 1.8,
+          duration: 1,
+          ease: "power2.out"
+        });
+
+        // Animate buttons after that
+        gsap.from(".banner__btn-group", {
+          opacity: 0,
+          scale: 0.95,
+          delay: 2.2,
+          duration: 1,
+          ease: "back.out(1.7)"
+        });
+      }, 300); // Delay after page load
+    });
+  </script>
+
+  <script src="assets/js/custom.js"></script>
+
+
+</body>
+</html>
