@@ -3986,9 +3986,9 @@ h6 a {
   }
 }
 .banner--style1 .banner__thumb img {
-  z-index: 1;
-  width: 500px;
-  margin-top: -39%;
+    z-index: 1;
+    width: 500px;
+    margin-top: -27%;
 }
 .banner--style1 .banner__thumb::before {
   content: "";
