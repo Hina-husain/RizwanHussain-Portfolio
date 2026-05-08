@@ -3790,6 +3790,19 @@ h6 a {
 .banner__content-heading img {
   width: 10%;
 }
+@media (min-width: 367px) {
+
+  .falling-span span{
+    font-size: 28px;
+  } 
+}
+@media (min-width: 367px) {
+
+  .falling-title span{
+    font-size: 33px;
+  } 
+}
+
 @media (min-width: 992px) {
   .banner__content-heading img {
     width: auto;
